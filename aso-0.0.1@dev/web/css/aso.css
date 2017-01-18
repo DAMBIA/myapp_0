@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+
+
+body {
+	background-color: #FBFCFA;
+}
+
+.container {
+	width: 100%;
+	background-color:;
+}
+
+.menu1 {
+	width: 100%;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 100;
+}
+
+.page_message {
+	background-color:;
+	border-style: solid;
+	border-width: 0px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.champ_group {
+	background-color:;
+	border-style: solid;
+	border-width: 0px;
+	text-align: left;
+	border-color:;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#form-content {
+	background-color:;
+	border-style: solid;
+	border-width: 3px;
+	margin-bottom: 45px;
+	margin-top: 10px;
+	border-color: #0000ff;
+	padding: 5%;
+	border-radius: 15px;
+}
+
+#hr-footer {
+	background-color: #596643;
+	color: white;
+	border-radius: 5px;
+}
