@@ -1,0 +1,14 @@
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+aso_administration:
+    resource: "@AsoAdministrationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+aso_utilisateur:
+    resource: "@AsoUtilisateurBundle/Resources/config/routing.yml"
+    prefix:   /
+
+aso_gestion_utilisateur:
+    resource: "@AsoGestionUtilisateurBundle/Resources/config/routing.yml"
+    prefix:   /
+

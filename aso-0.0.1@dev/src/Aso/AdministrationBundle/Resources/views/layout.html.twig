@@ -1,0 +1,32 @@
+{% extends "::layout.html.twig" %}
+{% block title %}
+{% block AsoAdministrationtitle %}
+{% endblock %}
+{% endblock %}
+{% block stylesheets %}
+{% stylesheets filter='cssrewrite' 
+'@AsoAdministrationBundle/Resources/public/css/administration.css' %}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% block AsoAdministrationstylesheets %}
+{% endblock %}
+{% endblock %}
+{% block body %}
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" id=""
+		style="background-color: white">
+		{{ render(controller("AsoAdministrationBundle:Administration:menuAdministration")) }}
+		</div>
+	<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id=""
+		style="background-color:">
+		{% block AsoAdministrationbody %}
+		{% endblock %}
+	</div>
+
+</div>
+{% endblock %}
+{% block javascripts %}
+{% block AsoAdministrationjavascripts %}
+{% endblock %}
+{% endblock %}
+

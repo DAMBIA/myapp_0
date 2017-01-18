@@ -1,0 +1,11 @@
+aso_utilisateur:
+    pattern:  /
+    defaults: { _controller: AsoUtilisateurBundle:Utilisateur:home }
+
+aso_utilisateur_home:
+    pattern:  /home
+    defaults: { _controller: AsoUtilisateurBundle:Utilisateur:home }
+    
+aso_utilisateur_menu_general:
+    pattern:  /menuGeneral
+    defaults: { _controller: AsoUtilisateurBundle:Utilisateur:menuGeneral }

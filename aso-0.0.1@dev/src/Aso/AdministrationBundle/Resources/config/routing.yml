@@ -1,0 +1,7 @@
+aso_administration_homepage:
+    pattern:  /hello
+    defaults: { _controller: AsoAdministrationBundle:Administration:a }
+
+aso_administration_menu_administration:
+    pattern:  /menuAdministration
+    defaults: { _controller: AsoAdministrationBundle:Administration:menuAdministration }

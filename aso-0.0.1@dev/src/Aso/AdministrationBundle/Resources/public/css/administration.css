@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color:;
+}
+
+.menuAdministration {
+	padding: 10px;
+	padding-left: 50px;
+	color:;
+}
+
+.menuAdministration:hover {
+	background-color: #FBFCFA;
+	font-size: 20px;
+	text-decoration: none;
+	color: #26C4EC;
+}
+
+.menuAdministration:focus {
+	background-color: white;
+	font-size: 20px;
+	text-decoration: none;
+	color: #26C4EC;
+}
+@media ( max-width : 767px) {
+	.menuAdministration {
+		padding: 10px;
+		padding-left: 50px;
+		color:;
+	}
+	.menuAdministration:hover {
+		background-color: #FBFCFA;
+		font-size: 20px;
+		text-decoration: none;
+		color: #26C4EC;
+	}
+}
+
+@media ( max-width : 991px) {
+}
+
+@media ( max-width : 1199px) {
+}
+
+@media ( min-width : 1200px) {
+}

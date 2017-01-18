@@ -1,0 +1,7 @@
+parameters:
+#    aso_gestion_utilisateur.example.class: Aso\GestionUtilisateurBundle\Example
+
+services:
+#    aso_gestion_utilisateur.example:
+#        class: %aso_gestion_utilisateur.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

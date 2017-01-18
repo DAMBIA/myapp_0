@@ -1,0 +1,60 @@
+<div class="menu1" style="background-color: #26C4EC">
+	<!-- Trigger Button HTML -->
+		&nbsp&nbsp&nbsp<span class="hidden-md hidden-lg glyphicon glyphicon-align-justify" id="btn-menu-principal" style="cursor:pointer"></span>
+	<!-- Collapsible Element HTML -->
+	<div id="menu-principal" class="collapse out">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: red"></div>
+			<div class="" id="" style="background-color: blue">
+				<input type="text" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: red"></div>
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: blue">
+				{% if app.session.get('userId') %}
+				ADM
+				{% else %}
+
+				{% endif %}
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: red">
+				{% if app.session.get('userId') %}
+				MIN
+				{% else %}
+
+				{% endif %}
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: yellow">
+				{% if app.session.get('userId') %}
+				ECO
+				{% else %}
+				<a href="{{ path('aso_gestion_utilisateur_inscription') }}">inscription</a>
+				{% endif %}
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: red">
+				{% if app.session.get('userId') %}
+				{{ user.nom }}
+				{% else %}
+				<a href="{{ path('aso_gestion_utilisateur_connexion') }}">connexion</a>
+				{% endif %}
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: blue">Parcourir</div>
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: red">
+				{% if app.session.get('userId') %}
+				Compte
+				{% else %}
+
+				{% endif %}
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1" id=""
+				style="background-color: blue"></div>
+		</div>
+	</div>
+	<!-- <a href="{{ path('aso_gestion_utilisateur_connexion') }}">connexion</a> -->

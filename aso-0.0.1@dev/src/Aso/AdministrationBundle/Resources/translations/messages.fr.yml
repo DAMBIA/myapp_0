@@ -1,0 +1,10 @@
+# Page du menu d'administration
+menuAdministration:
+    label:
+        administration: Administration
+        langues: Langues
+        continents: Continents
+        pays: Pays
+        banques: Banques
+        ministeres: Ministères
+        ecoles: Ecoles

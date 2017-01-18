@@ -1,0 +1,201 @@
+{% extends "AsoGestionUtilisateurBundle::layout.html.twig" %}
+{% block AsoGestionUtilisateurtitle %}
+{{ "inscription.page.title" | trans }}
+{% endblock %}
+{% block AsoGestionUtilisateurstylesheets %}
+{% stylesheets filter='cssrewrite' 
+'@AsoGestionUtilisateurBundle/Resources/public/css/inscription.css' %}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+{% block AsoGestionUtilisateurbody %}
+<div class="">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-11 col-lg-11" id=""
+			style="background-color:">
+
+			<div class="row">
+				<h4 id="page_message"
+					class="col-xs-12 col-sm-12 col-md-12 col-lg-12  page_message">
+					{{ 'inscription.page.message' | trans }}
+				</h4>
+
+			</div>
+			<form action="{{ path('aso_gestion_utilisateur_do_inscription') }}"
+				method="post">
+				<div class="row" id='form-content'>
+					<fieldset class="champ_group">
+						<label id="label_nom"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.nom' | trans }}</label>
+						<div class="div-nom" id="">
+							<input type="text" name="nom" id="ins_nom"
+								placeholder="{{ 'inscription.placeholder.nom' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+							<span id="error_nom"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_nom">{{ 'inscription.error.nom' | trans }}</span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_prenom"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.prenom' | trans }}</label>
+						<div class="div-prenom" id="">
+							<input type="text" name="prenom" id="ins_prenom"
+								placeholder="{{ 'inscription.placeholder.prenom' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+							<span id="error_prenom"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_prenom"></span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_naissance_date"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.naissance_date' | trans }}</label>
+						<div class="div-naissance_date" id="">
+							<input type="date" name="naissance_date" id="ins_naissance_date"
+								placeholder="{{ 'inscription.placeholder.naissance_date' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+							<span id="error_naissance_date"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_naissance_date">{{ 'inscription.error.naissance_date' | trans }}</span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_naissance_ville"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.naissance_ville' | trans }}</label>
+						<div class="div-naissance_ville" id="">
+							<input type="text" name="naissance_ville"
+								id="ins_naissance_ville"
+								placeholder="{{ 'inscription.placeholder.naissance_ville' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+							<span id="error_naissance_ville"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_naissance_ville">{{ 'inscription.error.naissance_ville' | trans }}</span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_naissance_pays"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.naissance_pays' | trans }}</label>
+						<div class="div-naissance_pays" id="">
+							<select name="naissance_pays" id="ins_naissance_pays"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control">
+								<option value="">{{ 'inscription.placeholder.naissance_pays' | trans }}</option>
+								{% for pay in pays %}
+								<option value={{ pay.id }}>
+									{{ pay.nomFrFr | trans }}</option>
+
+								{% endfor %}
+							</select> <span id="error_naissance_pays"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_naissance_pays">{{ 'inscription.error.naissance_pays' | trans }}</span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_email"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.email' | trans }}</label>
+						<div class="div-email" id="">
+							<input type="email" name="email" id="ins_email"
+								placeholder="{{ 'inscription.placeholder.email' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+
+
+							<p id="loading_email"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block"></p>
+
+
+
+
+
+
+
+							<input type="hidden" name="" id="test_email" value="false"
+								placeholder="{{ 'inscription.placeholder.email' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+
+							<span id="error_email"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_email">{{ 'inscription.error.email' | trans }}</span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_password"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.password' | trans }}</label>
+						<div class="div-password div-test-password" id="">
+							<input type="password" name="password" id="ins_password"
+								placeholder="{{ 'inscription.placeholder.password' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" required/>
+							<span id="error_password"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_password">{{ 'inscription.error.password' | trans }}</span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_repassword"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.repassword' | trans }}</label>
+						<div class="div-repassword div-test-password" id="">
+							<input type="password" name="repassword" id="ins_repassword"
+								placeholder="{{ 'inscription.placeholder.repassword' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" required/>
+							<span id="error_repassword"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_repassword">{{ 'inscription.error.repassword' | trans }}
+							</span> <input type="hidden" name="" id="test_password" placeholder=""
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_sexe"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'inscription.label.sexe' | trans }}</label>
+						<div class="div-sexe" id="">
+
+							<div class="hidden-xs hidden-sm col-md-2 col-lg-2" id=""
+								style="background-color:"></div>
+
+							{% for sexe in sexes %}
+							{% if loop.first %}
+							<input type="radio"
+								class="col-xs-1 col-sm-1 col-md-1 col-lg-1 sexe" name="sexe"
+								checked="checked" value={{ sexe.id }}> <label
+								id="label_sexe" class="col-xs-11 col-sm-11 col-md-3 col-lg-3">{{ sexe.nom | trans }}</label>
+							{% else %}
+							<input type="radio"
+								class="col-xs-1 col-sm-1 col-md-1 col-lg-1 sexe" name="sexe"
+								value={{ sexe.id }}> <label id="label_sexe"
+								class="col-xs-11 col-sm-11 col-md-3 col-lg-3">{{ sexe.nom | trans }}</label>
+
+							{% endif %}
+
+							{% endfor %}
+							<span id="error_sexe"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_sexe">
+							</span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<label id="label_inscription"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></label>
+						<div class="div-inscription" id="">
+							<div class="hidden-xs hidden-sm col-md-2 col-lg-2" id=""
+								style="background-color:"></div>
+							<input type="button" name="inscription" id="ins_inscription"
+								placeholder=""
+								value="{{ 'inscription.placeholder.inscription' | trans }}"
+								class="col-xs-12 col-sm-12 col-md-8 col-lg-8" /> <span
+								id="error_inscription"
+								class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_inscription"></span>
+						</div>
+					</fieldset>
+					<fieldset class="champ_group">
+						<a id="alt_connexion"
+							href='{{ path('aso_gestion_utilisateur_connexion') }}'
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">{{ 'inscription.alt.connexion' | trans }}</a>
+					</fieldset>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+</div>
+{% endblock %}
+{% block AsoGestionUtilisateurjavascripts %}
+{% javascripts '@AsoGestionUtilisateurBundle/Resources/public/js/inscription.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}

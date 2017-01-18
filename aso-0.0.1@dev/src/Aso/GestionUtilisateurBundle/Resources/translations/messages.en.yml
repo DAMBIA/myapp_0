@@ -1,0 +1,13 @@
+# Inscription page
+inscription:
+    page:
+        title: Welcome to aso, register...
+        message: Welcome, register for free
+    label:
+        nom: Last name
+        prenom: First name
+        naissance_date: Birth date
+    placeholder:
+        nom: last name
+        prenom: first name
+        naissance_date: birth date

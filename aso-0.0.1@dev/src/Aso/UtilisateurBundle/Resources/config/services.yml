@@ -1,0 +1,7 @@
+parameters:
+#    aso_utilisateur.example.class: Aso\UtilisateurBundle\Example
+
+services:
+#    aso_utilisateur.example:
+#        class: %aso_utilisateur.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

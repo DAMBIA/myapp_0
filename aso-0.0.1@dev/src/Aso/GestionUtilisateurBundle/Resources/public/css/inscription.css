@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+#ins_inscription {
+	background-color: #596643;
+	color: white;
+	border-radius:5px;
+}
+#loading_img_emai{
+	height:30px;
+}

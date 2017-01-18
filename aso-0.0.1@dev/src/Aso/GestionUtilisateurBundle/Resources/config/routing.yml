@@ -1,0 +1,32 @@
+aso_gestion_utilisateur_inscription:
+    path:    /inscription
+    defaults:    { _controller: AsoGestionUtilisateurBundle:GestionUtilisateur:inscription }
+
+aso_gestion_utilisateur_test_email:
+    path:    /isAvailbleEmail
+    defaults:    { _controller: AsoGestionUtilisateurBundle:GestionUtilisateur:isAvailbleEmail }
+
+aso_gestion_utilisateur_do_inscription:
+    path:    /doInscription
+    defaults:    { _controller: AsoGestionUtilisateurBundle:GestionUtilisateur:doInscription }
+
+aso_gestion_utilisateur_connexion:
+    path:    /connexion
+    defaults:    { _controller: AsoGestionUtilisateurBundle:GestionUtilisateur:connexion }
+
+aso_gestion_utilisateur_do_connexion:
+    path:    /doConnexion
+    defaults:    { _controller: AsoGestionUtilisateurBundle:GestionUtilisateur:doConnexion }
+
+aso_gestion_utilisateur_sendPassword:
+    path:    /sendPassword
+    defaults:    { _controller: AsoGestionUtilisateurBundle:GestionUtilisateur:sendPassword }
+
+aso_gestion_utilisateur_do_sendPassword:
+    path:    /doSendPassword
+    defaults:    { _controller: AsoGestionUtilisateurBundle:GestionUtilisateur:doSendPassword }
+
+aso_gestion_utilisateur_test_connection:
+    path:    /isAvailbleConnexion
+    defaults:    { _controller: AsoGestionUtilisateurBundle:GestionUtilisateur:isAvailbleConnexion }
+    

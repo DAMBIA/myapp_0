@@ -1,0 +1,141 @@
+{% extends "AsoGestionUtilisateurBundle::layout.html.twig" %}
+{% block AsoGestionUtilisateurtitle %}
+{{ "connexion.page.title" | trans }}
+{% endblock %}
+
+{% block AsoGestionUtilisateurstylesheets %}
+{% stylesheets filter='cssrewrite' 
+'@AsoGestionUtilisateurBundle/Resources/public/css/connexion.css' %}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+
+{% block AsoGestionUtilisateurbody %}
+
+
+
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-11 col-lg-11" id=""
+		style="background-color:">
+		<div class="row">
+			<h4 id="page_message"
+				class="col-xs-12 col-sm-12 col-md-12 col-lg-12  page_message">
+				{{ 'connexion.page.message' | trans }}
+			</h4>
+		</div>
+		<form action="{{ path('aso_gestion_utilisateur_do_connexion') }}"
+			method="post">
+			<div class="row" id='form-content'>
+<div class="row">
+	{% for messages in app.session.flashbag.get('message') %}
+	<div class="alert alert-success alert-dismissable col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Félicitations!</strong> <p>{{ 'inscription.succes.message' | trans({'%nom%': messages.nom}) }}</p>
+	</div>
+	{% endfor %}
+
+	{% for invitations in app.session.flashbag.get('invitation') %}
+	<div class="alert alert-info alert-dismissable col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Attention!</strong> <p>{{ 'inscription.succes.invitation' | trans ({'%email%': invitations.email}) }}</p>
+	</div>
+	{% endfor %}
+
+	{% for erreur in app.session.flashbag.get('erreur_identifiant') %}
+	<div class="alert alert-danger alert-dismissable col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Attention!</strong> <p>{{ 'connexion.error.connexion.parameter' | trans }}</p>
+	</div>
+	
+	{% endfor %}
+
+	{% for erreur in app.session.flashbag.get('erreur_validation') %}
+	<div class="alert alert-info alert-dismissable col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Compte inactif!</strong> <p>{{ 'connexion.error.connexion.validation' | trans ({'%email%': ''}) }}</p>
+	</div>
+	{% endfor %}
+
+	{% for password in app.session.flashbag.get('renvoi_password') %}
+	<div class="alert alert-success alert-dismissable col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong></strong> <p>{{ 'sendPassword.succes.renvoiPassword' | trans }}</p>
+	</div>
+	{% endfor %}
+</div>
+				<fieldset class="champ_group">
+					<label id="label_identifiant"
+						class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'connexion.label.identifiant' | trans }}</label>
+					<div class="div-identifiant" id="">
+						<input type="text" name="identifiant" id="ins_identifiant"
+							value='{{ app.session.get('con_identifiant') }}'
+							placeholder="{{ 'connexion.placeholder.identifiant' | trans }}"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+						<span id="error_identifiant"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_identifiant">{{ 'connexion.error.identifiant' | trans }}</span>
+					</div>
+				</fieldset>
+				<fieldset class="champ_group">
+					<label id="label_password"
+						class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ 'connexion.label.password' | trans }}</label>
+					<div class="div-password" id="">
+						<input type="password" name="password" id="ins_password" value=''
+							placeholder="{{ 'connexion.placeholder.password' | trans }}"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" />
+						<span id="error_password"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_password">{{ 'connexion.error.password' | trans }}</span>
+					</div>
+				</fieldset>
+				<fieldset class="champ_group">
+					<label id="label_session"
+						class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></label>
+					<div class="div-session" id="">
+						<div class="hidden-xs hidden-sm col-md-1 col-lg-1" id=""
+							style="background-color:"></div>
+						<input type="checkbox" class="col-xs-1 col-sm-1 col-md-1 col-lg-1"
+							name="session" id="session" value=""> <label
+							id="label_session"
+							class="col-xs-11 col-sm-11 col-md-10 col-lg-10">{{ 'connexion.label.session' | trans }}</label>
+						<span id="error_session"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_session"></span>
+					</div>
+
+				</fieldset>
+				<fieldset class="champ_group">
+
+					<label id="label_connexion"
+						class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></label>
+					<div class="div-connexion" id="">
+						<div class="hidden-xs hidden-sm col-md-2 col-lg-2" id=""
+							style="background-color:"></div>
+						<input type="button" name="connexion" id="ins_connexion"
+							placeholder=""
+							value="{{ 'connexion.placeholder.connexion' | trans }}"
+							class="col-xs-12 col-sm-12 col-md-8 col-lg-8" /> <span
+							id="error_connexion"
+							class="col-xs-12 col-sm-12 col-md-12 col-lg-12 help-block error error_connexion"></span>
+					</div>
+				</fieldset>
+				<fieldset class="champ_group">
+					<a id="forget_password"
+						href='{{ path('aso_gestion_utilisateur_sendPassword') }}'
+						class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">{{ 'connexion.forget.password' | trans }}</a>
+				</fieldset>
+				<fieldset class="champ_group">
+					<a id="alt_inscription"
+						href='{{ path('aso_gestion_utilisateur_inscription') }}'
+						class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">{{ 'connexion.alt.inscription' | trans }}</a>
+				</fieldset>
+
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}
+
+{% block AsoGestionUtilisateurjavascripts %}
+{% javascripts '@AsoGestionUtilisateurBundle/Resources/public/js/connexion.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}

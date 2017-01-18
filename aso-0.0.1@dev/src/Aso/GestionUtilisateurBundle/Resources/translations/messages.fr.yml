@@ -1,0 +1,84 @@
+# Page d'inscription
+inscription:
+    page:
+        title: Bienvenue sur aso, inscrivez vous...
+        message: Bienvenue, inscrivez vous gratuitement
+    label:
+        nom: Nom
+        prenom: Prénom
+        naissance_date: Date de naissance
+        naissance_ville: Ville de naissance
+        naissance_pays: Pays de naissance
+        email: Adresse email
+        password: Mot de passe
+        repassword: Confirmez votre mot de passe
+        sexe: Sexe
+    placeholder:
+        nom: entrez votre nom
+        prenom: entrez votre prénom
+        naissance_date: entrez votre date de naissance
+        naissance_ville: entrez votre ville de naissance
+        naissance_pays: sélectionnez votre pays de naissance
+        email: entrez votre adresse email
+        password: entrez votre mot de passe
+        repassword: confirmez votre mot de passe
+        inscription: Inscription
+    error:
+       nom: Veuillez entrer votre nom
+       prenom: Veuillez entrer votre prénom
+       naissance_date: Veuillez entrer votre date de naissance
+       naissance_ville: Veuillez enter votre ville de naissance
+       naissance_pays: Veuillez entrer votre pays de naissance
+       email: Adresse email indisponible ou invalide
+       password: Votre mot de passe doit commencer par une majiscule, contenir au moins un chiffre et avoir au minimum 8 caractères
+       repassword: Les deux champs mot de passe doivent être identiques
+    succes:
+       message: M./ Mme %nom%, votre inscription a été réalisée avec succès
+       invitation: Veuillez saisir le code de confirmation envoyé à votre adresse %email% dans le champ mot de passe pour activer votre compte
+    alt:
+        chargement: Chargement
+        connexion:  Déja inscrit? connectez vous     
+#page de connexion
+connexion:
+    page:
+        title: Bienvenue sur aso, connectez vous ...
+        message: Bienvenue, Connectez vous
+    label:
+        identifiant: Identifiant
+        password: Code secret
+        session: Garder ma session active
+    placeholder:
+        identifiant: Matricule ou adresse email
+        password: Code de confirmation ou mot de passe
+        connexion: Connexion
+        
+    error:
+        identifiant: Veuillez entrer votre identifiant
+        password: Veuillez entrer votre code secret
+        connexion:
+            parameter: Erreur d'identifiant et ou de code secret
+            validation: Veuillez activer votre compte, votre code de confirmation vous a été renvoyé à votre adresse %email%
+    succes:
+    forget:
+        password: Mot de passe oublié?
+    alt:
+        inscription: Pas encore inscrit?
+    
+#page de renvoi du mot de passe
+sendPassword:
+    page:
+        title: Mot de passe oublié?
+        message: Bienvenue, Mot de passe oublié?
+    label:
+        identifiant: Identifiant
+    placeholder:
+        identifiant: Matricule ou adresse email
+        renvoiPassword: Obtenez votre mot de passe
+    error:
+        identifiant: Veuillez entrer votre identifiant
+    succes:
+        renvoiPassword: Veuillez consulter votre boite email pour obtenir votre mot de passe
+    alt:
+        connexion: Connectez vous ici
+homme: Homme
+femme: Femme
